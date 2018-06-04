@@ -6,20 +6,20 @@ import createAppStore from '../../../lib/store'
 const store = createAppStore()
 
 class App extends React.Component {
-	// componentDidMount() {
-	// 	store.subscribe(() => {
-	// 		console.log('*___STATE___*', store.getState())
-	// 	})
+	componentDidMount() {
+		store.subscribe(() => {
+			console.log('--___STATE___--', store.getState())
+		})
 
-	// 	store.dispatch({ type: null })
-	// }
+		store.dispatch({ type: null })
+	}
 
 	render() {
 		return (
 			<section>
-				{/* <Provider store={store}> */}
-				<p>hell0</p>
-				{/* </Provider> */}
+				<Provider store={store}>
+					<p>hello world!</p>
+				</Provider>
 			</section>
 		)
 	}
