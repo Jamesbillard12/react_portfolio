@@ -15,7 +15,7 @@ let plugins = [
 	new EnvironmentPlugin(['NODE_ENV']),
 	new ExtractPlugin('bundle-[hash].css'),
 	new HTMLPlugin({ template: `${__dirname}/src/index.html` }),
-	new CopyWebpackPlugin([{ from: './asset', to: '../build/asset' }]),
+	new CopyWebpackPlugin([{ from: './assets', to: '../build/assets' }]),
 	new DefinePlugin({
 		__NODE_ENV__: JSON.stringify(process.env.NODE_ENV),
 		__DEBUG__: JSON.stringify(!production)
@@ -26,6 +26,7 @@ if (production)
 	plugins = plugins.concat([new CleanPlugin(), new UglifyPlugin()])
 
 module.exports = {
+	mode: process.env.NODE_ENV,
 	plugins,
 	entry: ['babel-polyfill', `${__dirname}/src/main.js`],
 	devServer: {

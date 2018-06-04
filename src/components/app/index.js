@@ -1,8 +1,7 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route } from 'react-router-dom'
-import createAppStore from '../../lib/store'
-import DashboardContainer from '../dashboard-container'
+import createAppStore from '../../../lib/store'
 
 const store = createAppStore()
 
