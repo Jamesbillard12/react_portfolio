@@ -22,7 +22,8 @@ class Landing extends React.Component {
 		// }
 	}
 	render() {
-		const opacity = Math.min(100 / this.state.currentScrollHeight, 1)
+		const opacity =
+			Math.min(100 / this.state.currentScrollHeight, 1).toFixed(2) - 0.1
 		const opaque = Math.min(this.state.currentScrollHeight / 400, 1)
 		return (
 			<main className="landing">

@@ -56,7 +56,7 @@ class MenuAppBar extends React.Component {
 		const { classes } = this.props
 		const { auth, anchorEl } = this.state
 		const open = Boolean(anchorEl)
-		console.log(this.props.opaque)
+		// console.log(this.props.opaque)
 		return (
 			<div className={classes.root}>
 				<AppBar
@@ -75,23 +75,21 @@ class MenuAppBar extends React.Component {
 							zIndex: 10
 						}}
 					>
-						<Typography variant="title" color="black" className={classes.flex}>
+						<Typography variant="title" className={classes.flex}>
 							{/* {this.props.title} */}
 						</Typography>
 					</Toolbar>
 					{auth && (
 						<Fragment>
-							{renderIf(
-								this.props.opaque > 0.4,
-								<img
-									className={
-										this.props.opaque < 0.5
-											? 'corner-logo shadowfiltersmall'
-											: 'corner-logo shadowfiltersmall show'
-									}
-									src="../../../assets/logo.png"
-								/>
-							)}
+							<img
+								className={
+									this.props.opaque < 0.9
+										? 'corner-logo shadowfiltersmall'
+										: 'corner-logo shadowfiltersmall show'
+								}
+								src="../../../assets/logo.png"
+							/>
+
 							<div className="icon-button">
 								<IconButton
 									aria-owns={open ? 'menu-appbar' : null}
