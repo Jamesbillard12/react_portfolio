@@ -1,16 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Header from '../header'
+const Fragment = React.Fragment
 
 class Body extends React.Component {
 	render() {
 		return (
-			<main className="body">
-				<Header />
+			<Fragment>
+				<Header opacity={this.props.opacity} />
 				<div
-					style={{ backgroundColor: 'pink', width: '100%', height: '100%' }}
+					style={{ backgroundColor: 'white', width: '100%', height: '200%' }}
 				/>
-			</main>
+			</Fragment>
 		)
 	}
 }

@@ -27,9 +27,14 @@ const styles = {
 }
 
 class MenuAppBar extends React.Component {
-	state = {
-		auth: true,
-		anchorEl: null
+	constructor(props) {
+		super(props)
+
+		this.state = {
+			currentScrollHeight: 0,
+			auth: true,
+			anchorEl: null
+		}
 	}
 
 	handleChange = (event, checked) => {
@@ -48,16 +53,22 @@ class MenuAppBar extends React.Component {
 		const { classes } = this.props
 		const { auth, anchorEl } = this.state
 		const open = Boolean(anchorEl)
+		console.log(this.props.opacity)
 
 		return (
 			<div className={classes.root}>
 				<AppBar
-					style={{ backgroundColor: 'rgba(2, 1, 0, 1)' }}
+					className="app-bar"
+					style={{
+						backgroundColor: 'transparent',
+						zIndex: 10,
+						position: 'fixed'
+					}}
 					position="static"
 				>
-					<Toolbar>
+					<Toolbar style={{ backgroundColor: 'transparent', zIndex: 10 }}>
 						<Typography variant="title" color="black" className={classes.flex}>
-							{this.props.title}
+							{/* {this.props.title} */}
 						</Typography>
 						{auth && (
 							<div>
@@ -65,7 +76,7 @@ class MenuAppBar extends React.Component {
 									aria-owns={open ? 'menu-appbar' : null}
 									aria-haspopup="true"
 									onClick={this.handleMenu}
-									color="inherit"
+									color="black"
 								>
 									<AccountCircle />
 								</IconButton>

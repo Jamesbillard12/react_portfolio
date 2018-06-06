@@ -1,14 +1,32 @@
+import './index.scss'
 import React from 'react'
 import { connect } from 'react-redux'
 import { withStyles } from '@material-ui/core/styles'
 import AppBarCustom from '../app-bar-custom'
 import Body from '../body'
+
 class Landing extends React.Component {
+	constructor(props) {
+		super(props)
+
+		this.state = { currentScrollHeight: 1 }
+	}
+	componentDidMount() {
+		window.onscroll = () => {
+			// const newScrollHeight = Math.ceil(window.scrollY / 50) * 30
+			// if (this.state.currentScrollHeight != newScrollHeight) {
+			this.setState({ currentScrollHeight: window.scrollY * 2 }, () => {
+				// console.log(this.state.currentScrollHeight)
+			})
+		}
+		// }
+	}
 	render() {
+		const opacity = Math.min(100 / this.state.currentScrollHeight, 1)
 		return (
 			<main className="landing">
-				<AppBarCustom title="James Billard" />
-				<Body />
+				<AppBarCustom opacity={opacity} title="James Billard" />
+				<Body opacity={opacity} />
 			</main>
 		)
 	}
