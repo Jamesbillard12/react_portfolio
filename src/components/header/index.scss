@@ -2,6 +2,9 @@
 
 .title {
 	background-color: $color-primary;
+	background-image: url('../../../assets/header_bg.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 	padding: 3%;
 	display: flex;
 	flex-direction: column;

@@ -11,11 +11,7 @@ class Header extends React.Component {
 						className="grillimg shadowfilter"
 						src="../../../assets/logo.png"
 					/>
-					<h1 className="titleName gold-text">James Billard</h1>
 				</section>
-				<nav>
-					<ul />
-				</nav>
 			</header>
 		)
 	}
