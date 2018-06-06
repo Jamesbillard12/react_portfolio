@@ -2,6 +2,7 @@ import './index.scss'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { renderIf } from '../../../lib/util'
+
 const Fragment = React.Fragment
 
 class Header extends React.Component {
@@ -24,9 +25,10 @@ class Header extends React.Component {
 								src="../../../assets/logo.png"
 							/>
 							<h4 className="titleName gold-text subheading">
-								Based in Seattle, but Made in Canada
+								Based in Seattle, but Made in Canada.
 							</h4>
 						</section>
+						<i class="material-icons arrow-down">keyboard_arrow_down</i>
 					</header>,
 					<div />
 				)}
