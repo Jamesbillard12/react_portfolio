@@ -1,4 +1,6 @@
+import './index.scss'
 import React from 'react'
+import { renderIf } from '../../../lib/util'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
@@ -13,6 +15,7 @@ import FormGroup from '@material-ui/core/FormGroup'
 import MenuItem from '@material-ui/core/MenuItem'
 import Menu from '@material-ui/core/Menu'
 
+const Fragment = React.Fragment
 const styles = {
 	root: {
 		flexGrow: 1
@@ -53,6 +56,7 @@ class MenuAppBar extends React.Component {
 		const { classes } = this.props
 		const { auth, anchorEl } = this.state
 		const open = Boolean(anchorEl)
+		// console.log(this.props.opaque)
 		return (
 			<div className={classes.root}>
 				<AppBar
@@ -71,45 +75,60 @@ class MenuAppBar extends React.Component {
 							zIndex: 10
 						}}
 					>
-						<Typography variant="title" color="black" className={classes.flex}>
+						<Typography variant="title" className={classes.flex}>
 							{/* {this.props.title} */}
 						</Typography>
 					</Toolbar>
 					{auth && (
-						<div>
-							<IconButton
-								aria-owns={open ? 'menu-appbar' : null}
-								aria-haspopup="true"
-								onClick={this.handleMenu}
-								color="black"
-								style={{
-									opacity: 1
-								}}
-							>
-								<AccountCircle
+						<Fragment>
+							<img
+								className={
+									this.props.opaque < 0.9
+										? 'corner-logo shadowfiltersmall'
+										: 'corner-logo shadowfiltersmall show'
+								}
+								src="../../../assets/logo.png"
+							/>
+
+							<div className="icon-button">
+								<IconButton
+									aria-owns={open ? 'menu-appbar' : null}
+									aria-haspopup="true"
+									onClick={this.handleMenu}
 									style={{
 										opacity: 1
 									}}
-								/>
-							</IconButton>
-							<Menu
-								id="menu-appbar"
-								anchorEl={anchorEl}
-								anchorOrigin={{
-									vertical: 'top',
-									horizontal: 'right'
-								}}
-								transformOrigin={{
-									vertical: 'top',
-									horizontal: 'right'
-								}}
-								open={open}
-								onClose={this.handleClose}
-							>
-								<MenuItem onClick={this.handleClose}>Profile</MenuItem>
-								<MenuItem onClick={this.handleClose}>My account</MenuItem>
-							</Menu>
-						</div>
+								>
+									<AccountCircle
+										style={{
+											opacity: 1,
+											transition: '1s',
+											color:
+												this.props.opaque < 0.6
+													? 'rgba(71, 68, 72, 1)'
+													: 'white'
+										}}
+									/>
+								</IconButton>
+								<Menu
+									id="menu-appbar"
+									anchorEl={anchorEl}
+									anchorOrigin={{
+										vertical: 'top',
+										horizontal: 'right'
+									}}
+									transformOrigin={{
+										vertical: 'top',
+										horizontal: 'right'
+									}}
+									open={open}
+									onClose={this.handleClose}
+								>
+									<MenuItem onClick={this.handleClose}>Profile</MenuItem>
+									<MenuItem onClick={this.handleClose}>My account</MenuItem>
+								</Menu>
+							</div>
+						</Fragment>
 					)}
 				</AppBar>
 			</div>
