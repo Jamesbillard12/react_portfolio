@@ -3,11 +3,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 class Header extends React.Component {
+	constructor(props) {
+		super(props)
+	}
 	render() {
 		return (
-			<header>
+			<header style={{ opacity: this.props.opacity }} className="header">
 				<section className="title">
-					{/* <h1 className="titleName gold-text heading">Front-end Developer</h1> */}
+					<h1 className="titleName gold-text heading">Front-end Developer</h1>
 					<img
 						className="grillimg shadowfilter"
 						src="../../../assets/logo.png"

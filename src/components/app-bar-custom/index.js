@@ -27,9 +27,14 @@ const styles = {
 }
 
 class MenuAppBar extends React.Component {
-	state = {
-		auth: true,
-		anchorEl: null
+	constructor(props) {
+		super(props)
+
+		this.state = {
+			currentScrollHeight: 0,
+			auth: true,
+			anchorEl: null
+		}
 	}
 
 	handleChange = (event, checked) => {
@@ -48,47 +53,64 @@ class MenuAppBar extends React.Component {
 		const { classes } = this.props
 		const { auth, anchorEl } = this.state
 		const open = Boolean(anchorEl)
-
 		return (
 			<div className={classes.root}>
 				<AppBar
-					style={{ backgroundColor: 'rgba(2, 1, 0, 1)' }}
+					className="app-bar"
+					style={{
+						backgroundColor: 'transparent',
+						zIndex: 10,
+						position: 'fixed'
+					}}
 					position="static"
 				>
-					<Toolbar>
+					<Toolbar
+						style={{
+							backgroundColor: 'black',
+							opacity: this.props.opaque,
+							zIndex: 10
+						}}
+					>
 						<Typography variant="title" color="black" className={classes.flex}>
-							{this.props.title}
+							{/* {this.props.title} */}
 						</Typography>
-						{auth && (
-							<div>
-								<IconButton
-									aria-owns={open ? 'menu-appbar' : null}
-									aria-haspopup="true"
-									onClick={this.handleMenu}
-									color="inherit"
-								>
-									<AccountCircle />
-								</IconButton>
-								<Menu
-									id="menu-appbar"
-									anchorEl={anchorEl}
-									anchorOrigin={{
-										vertical: 'top',
-										horizontal: 'right'
-									}}
-									transformOrigin={{
-										vertical: 'top',
-										horizontal: 'right'
-									}}
-									open={open}
-									onClose={this.handleClose}
-								>
-									<MenuItem onClick={this.handleClose}>Profile</MenuItem>
-									<MenuItem onClick={this.handleClose}>My account</MenuItem>
-								</Menu>
-							</div>
-						)}
 					</Toolbar>
+					{auth && (
+						<div>
+							<IconButton
+								aria-owns={open ? 'menu-appbar' : null}
+								aria-haspopup="true"
+								onClick={this.handleMenu}
+								color="black"
+								style={{
+									opacity: 1
+								}}
+							>
+								<AccountCircle
+									style={{
+										opacity: 1
+									}}
+								/>
+							</IconButton>
+							<Menu
+								id="menu-appbar"
+								anchorEl={anchorEl}
+								anchorOrigin={{
+									vertical: 'top',
+									horizontal: 'right'
+								}}
+								transformOrigin={{
+									vertical: 'top',
+									horizontal: 'right'
+								}}
+								open={open}
+								onClose={this.handleClose}
+							>
+								<MenuItem onClick={this.handleClose}>Profile</MenuItem>
+								<MenuItem onClick={this.handleClose}>My account</MenuItem>
+							</Menu>
+						</div>
+					)}
 				</AppBar>
 			</div>
 		)
