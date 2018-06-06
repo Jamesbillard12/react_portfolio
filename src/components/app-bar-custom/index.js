@@ -53,8 +53,6 @@ class MenuAppBar extends React.Component {
 		const { classes } = this.props
 		const { auth, anchorEl } = this.state
 		const open = Boolean(anchorEl)
-		console.log(this.props.opacity)
-
 		return (
 			<div className={classes.root}>
 				<AppBar
@@ -66,40 +64,53 @@ class MenuAppBar extends React.Component {
 					}}
 					position="static"
 				>
-					<Toolbar style={{ backgroundColor: 'transparent', zIndex: 10 }}>
+					<Toolbar
+						style={{
+							backgroundColor: 'black',
+							opacity: this.props.opaque,
+							zIndex: 10
+						}}
+					>
 						<Typography variant="title" color="black" className={classes.flex}>
 							{/* {this.props.title} */}
 						</Typography>
-						{auth && (
-							<div>
-								<IconButton
-									aria-owns={open ? 'menu-appbar' : null}
-									aria-haspopup="true"
-									onClick={this.handleMenu}
-									color="black"
-								>
-									<AccountCircle />
-								</IconButton>
-								<Menu
-									id="menu-appbar"
-									anchorEl={anchorEl}
-									anchorOrigin={{
-										vertical: 'top',
-										horizontal: 'right'
-									}}
-									transformOrigin={{
-										vertical: 'top',
-										horizontal: 'right'
-									}}
-									open={open}
-									onClose={this.handleClose}
-								>
-									<MenuItem onClick={this.handleClose}>Profile</MenuItem>
-									<MenuItem onClick={this.handleClose}>My account</MenuItem>
-								</Menu>
-							</div>
-						)}
 					</Toolbar>
+					{auth && (
+						<div>
+							<IconButton
+								aria-owns={open ? 'menu-appbar' : null}
+								aria-haspopup="true"
+								onClick={this.handleMenu}
+								color="black"
+								style={{
+									opacity: 1
+								}}
+							>
+								<AccountCircle
+									style={{
+										opacity: 1
+									}}
+								/>
+							</IconButton>
+							<Menu
+								id="menu-appbar"
+								anchorEl={anchorEl}
+								anchorOrigin={{
+									vertical: 'top',
+									horizontal: 'right'
+								}}
+								transformOrigin={{
+									vertical: 'top',
+									horizontal: 'right'
+								}}
+								open={open}
+								onClose={this.handleClose}
+							>
+								<MenuItem onClick={this.handleClose}>Profile</MenuItem>
+								<MenuItem onClick={this.handleClose}>My account</MenuItem>
+							</Menu>
+						</div>
+					)}
 				</AppBar>
 			</div>
 		)

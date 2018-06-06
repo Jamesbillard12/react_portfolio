@@ -9,7 +9,7 @@ class Landing extends React.Component {
 	constructor(props) {
 		super(props)
 
-		this.state = { currentScrollHeight: 1 }
+		this.state = { currentScrollHeight: 0 }
 	}
 	componentDidMount() {
 		window.onscroll = () => {
@@ -23,9 +23,10 @@ class Landing extends React.Component {
 	}
 	render() {
 		const opacity = Math.min(100 / this.state.currentScrollHeight, 1)
+		const opaque = Math.min(this.state.currentScrollHeight / 400, 1)
 		return (
 			<main className="landing">
-				<AppBarCustom opacity={opacity} title="James Billard" />
+				<AppBarCustom opaque={opaque} title="James Billard" />
 				<Body opacity={opacity} />
 			</main>
 		)
