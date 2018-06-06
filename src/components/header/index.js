@@ -1,6 +1,7 @@
 import './index.scss'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import renderIf from '../../../lib/util'
 
 class Header extends React.Component {
 	constructor(props) {
