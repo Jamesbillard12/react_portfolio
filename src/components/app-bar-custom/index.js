@@ -14,6 +14,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel'
 import FormGroup from '@material-ui/core/FormGroup'
 import MenuItem from '@material-ui/core/MenuItem'
 import Menu from '@material-ui/core/Menu'
+import NavBar from '../nav-bar'
 
 const Fragment = React.Fragment
 const styles = {
@@ -90,6 +91,7 @@ class MenuAppBar extends React.Component {
 								src="../../../assets/logo.png"
 							/>
 
+							<NavBar />
 							<div className="icon-button">
 								<IconButton
 									aria-owns={open ? 'menu-appbar' : null}
