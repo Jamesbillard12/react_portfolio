@@ -1,6 +1,8 @@
+import './index.scss'
 import React from 'react'
 import { connect } from 'react-redux'
 import Header from '../header'
+import AboutMe from '../about-me'
 const Fragment = React.Fragment
 
 class Body extends React.Component {
@@ -8,9 +10,7 @@ class Body extends React.Component {
 		return (
 			<Fragment>
 				<Header opacity={this.props.opacity} />
-				<div
-					style={{ backgroundColor: 'white', width: '100%', height: '200%' }}
-				/>
+				<AboutMe />
 			</Fragment>
 		)
 	}

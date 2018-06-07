@@ -10,28 +10,22 @@ class Header extends React.Component {
 		super(props)
 	}
 	render() {
-		console.log(this.props.opacity)
 		return (
 			<Fragment>
-				{renderIf(
-					this.props.opacity > 0,
-					<header style={{ opacity: this.props.opacity }} className="header">
-						<section className="title">
-							<h1 className="titleName gold-text heading">
-								Front-end Developer
-							</h1>
-							<img
-								className="grillimg shadowfilter"
-								src="../../../assets/logo.png"
-							/>
-							<h4 className="titleName gold-text subheading">
-								Based in Seattle, but Made in Canada.
-							</h4>
-						</section>
-						<i class="material-icons arrow-down">keyboard_arrow_down</i>
-					</header>,
-					<div />
-				)}
+				<header style={{ opacity: this.props.opacity }} className="header">
+					<section className="title">
+						<h1 className="titleName gold-text heading">Front-end Developer</h1>
+						<img
+							className="grillimg shadowfilter"
+							src="../../../assets/logo.png"
+						/>
+						<h4 className="titleName gold-text subheading">
+							Based in Seattle, but Made in Canada.
+						</h4>
+					</section>
+					<i class="material-icons arrow-down">keyboard_arrow_down</i>
+				</header>,
+				<div />
 			</Fragment>
 		)
 	}
