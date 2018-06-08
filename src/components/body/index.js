@@ -3,6 +3,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Header from '../header'
 import AboutMe from '../about-me'
+import FrontEndSkills from '../front-end-skills'
 const Fragment = React.Fragment
 
 class Body extends React.Component {
@@ -11,6 +12,7 @@ class Body extends React.Component {
 			<Fragment>
 				<Header opacity={this.props.opacity} />
 				<AboutMe />
+				<FrontEndSkills />
 			</Fragment>
 		)
 	}

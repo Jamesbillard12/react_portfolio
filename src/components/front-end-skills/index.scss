@@ -1,0 +1,59 @@
+@import '../../style/_vars.scss';
+
+.front-end-skills {
+	background-color: rgba(2, 1, 0, 0.3);
+	&__table-container {
+		width: 100%;
+		height: 100%;
+		padding-top: 100px;
+		padding-bottom: 100px;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-content: center;
+		align-items: center;
+		&__title {
+			z-index: 1;
+			height: 200px;
+			background-image: url('../../../assets/maple-leaf-silhouette.svg');
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center center;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-content: center;
+			align-items: center;
+			&__icon {
+				color: $color-secondary;
+				font-size: 5vw;
+			}
+			&__text {
+				color: $white;
+				margin: 0;
+				font-size: 3vw;
+			}
+		}
+		&__table {
+			width: 30%;
+			background-color: $white;
+			margin-top: -50px;
+			border-radius: 3%;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-content: center;
+			align-items: center;
+			text-align: center;
+			&__caption {
+				padding: 36px;
+			}
+			&__title {
+				color: $color-secondary;
+			}
+		}
+	}
+}
