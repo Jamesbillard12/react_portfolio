@@ -34,13 +34,16 @@
 				color: $white;
 				margin: 0;
 				font-size: 3vw;
+				filter: drop-shadow(0px 12px 7px #474448);
 			}
 		}
 		&__table {
+			font-family: 'Poppins', sans-serif !important;
 			width: 30%;
+			padding: 36px;
 			background-color: $white;
 			margin-top: -50px;
-			border-radius: 3%;
+			border-radius: 10px;
 			display: flex;
 			flex-direction: column;
 			flex-wrap: wrap;
@@ -48,8 +51,16 @@
 			align-content: center;
 			align-items: center;
 			text-align: center;
+			filter: drop-shadow(0px 12px 7px #474448);
 			&__caption {
-				padding: 36px;
+				margin-bottom: 0;
+			}
+			&__holder {
+				width: 100%;
+				&__right {
+					text-align: right;
+					margin-top: 0;
+				}
 			}
 			&__title {
 				color: $color-secondary;
