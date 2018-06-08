@@ -15,11 +15,32 @@ class AboutMe extends React.Component {
 	render() {
 		return (
 			<div className="about-me">
+				<img src="../../../assets/seattle-skyline-black-silhouette.svg" />
 				<div className="about-me__content">
 					<div className="about-me__content__header">
-						<h1 className="about-me__contentheader__title">
-							Hi, I'm James. Welcome to my World!
+						<i class="material-icons about-me__content__header__icon">
+							account_box
+						</i>
+						<h1 className="about-me__content__header__title">
+							Hi, I'm James. Welcome to my portfolio!
 						</h1>
+					</div>
+					<div className="about-me__content__body">
+						<p className="about-me__content__body__paragraph">
+							I am a passionate and tenacious Web developer. Fast learner,
+							offering the ability to assess an organization’s needs and create
+							a complementary, robust web presence. Experienced in all five
+							stages of the web development process including information
+							gathering, planning, design, development, testing and deployment,
+							and maintenance. Specialties include JavaScript, React, Angular,
+							CSS, HTML, and Node.js.
+						</p>
+						<div className="about-me__content__body__photo-div">
+							<img
+								className="about-me__content__body__photo-div__photo"
+								src="../../../assets/myAvatar.svg"
+							/>
+						</div>
 					</div>
 				</div>
 			</div>
