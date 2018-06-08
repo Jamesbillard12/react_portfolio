@@ -104,10 +104,7 @@ class MenuAppBar extends React.Component {
 										style={{
 											opacity: 1,
 											transition: '1s',
-											color:
-												this.props.opaque < 0.6
-													? 'rgba(71, 68, 72, 1)'
-													: 'white'
+											color: 'white'
 										}}
 									/>
 								</IconButton>

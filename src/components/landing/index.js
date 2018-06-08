@@ -9,6 +9,9 @@ import Body from '../body'
 class Landing extends React.Component {
 	constructor(props) {
 		super(props)
+		this.state = {
+			imgUrl: '../../../assets/black-and-white-dark-pattern-211816.jpg'
+		}
 	}
 	componentDidMount() {
 		this.props.scrollTop({ scrollTop: 1 })
@@ -26,7 +29,11 @@ class Landing extends React.Component {
 				: Math.min(100 / this.props.scrolltop.scrollTop, 1).toFixed(2) - 0.1
 		const opaque = Math.min(this.props.scrolltop.scrollTop / 400, 1)
 		return (
-			<main ref="landing" className="landing">
+			<main
+				ref="landing"
+				className="landing"
+				style={{ backgroundImage: `url(${this.state.imgUrl})` }}
+			>
 				<AppBarCustom opaque={opaque} title="James Billard" />
 				<Body opacity={opacity} />
 			</main>
