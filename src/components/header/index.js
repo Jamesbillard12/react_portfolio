@@ -23,7 +23,7 @@ class Header extends React.Component {
 							Based in Seattle, but Made in Canada.
 						</h4>
 					</section>
-					<i class="material-icons arrow-down">keyboard_arrow_down</i>
+					<i className="material-icons arrow-down">keyboard_arrow_down</i>
 				</header>,
 				<div />
 			</Fragment>

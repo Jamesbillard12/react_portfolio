@@ -18,7 +18,7 @@ class AboutMe extends React.Component {
 				<img src="../../../assets/seattle-skyline-black-silhouette.svg" />
 				<div className="about-me__content">
 					<div className="about-me__content__header">
-						<i class="material-icons about-me__content__header__icon">
+						<i className="material-icons about-me__content__header__icon">
 							account_box
 						</i>
 						<h1 className="about-me__content__header__title">
@@ -48,9 +48,9 @@ class AboutMe extends React.Component {
 	}
 }
 
-const mapStateToProps = state => {}
+const mapStateToProps = state => ({})
 
-const mapDispatchToProps = (dispatch, getState) => {}
+const mapDispatchToProps = (dispatch, getState) => ({})
 
 export default connect(
 	mapStateToProps,
