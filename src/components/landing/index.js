@@ -22,6 +22,18 @@ class Landing extends React.Component {
 			this.props.scrollTop({ scrollTop: this.refs.landing.scrollTop * 2 })
 		}
 	}
+
+	backgroundImageChange = () => {
+		if (this.props.scrolltop.scrollTop < 2000) {
+			this.setState({
+				imgUrl: '../../../assets/black-and-white-dark-pattern-211816.jpg'
+			})
+		} else if (this.props.scrolltop.scrollTop > 2000) {
+			this.setState({
+				imgUrl: '../../../assets/black-and-white-browsing-business-265152.jpg'
+			})
+		}
+	}
 	render() {
 		const opacity =
 			Math.min(100 / this.props.scrolltop.scrollTop, 1) === 1.0
@@ -30,6 +42,7 @@ class Landing extends React.Component {
 		const opaque = Math.min(this.props.scrolltop.scrollTop / 400, 1)
 		return (
 			<main
+				onScroll={this.backgroundImageChange}
 				ref="landing"
 				className="landing"
 				style={{ backgroundImage: `url(${this.state.imgUrl})` }}
