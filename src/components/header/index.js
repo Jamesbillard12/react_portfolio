@@ -15,15 +15,15 @@ class Header extends React.Component {
 				<header style={{ opacity: this.props.opacity }} className="header">
 					<section className="title">
 						<h1 className="titleName gold-text heading">Front-end Developer</h1>
+						<h4 className="titleName gold-text subheading">
+							Based in Seattle, but Made in Canada.
+						</h4>
 						<img
 							className="grillimg shadowfilter"
 							src="../../../assets/logo.png"
 						/>
-						<h4 className="titleName gold-text subheading">
-							Based in Seattle, but Made in Canada.
-						</h4>
 					</section>
-					<i class="material-icons arrow-down">keyboard_arrow_down</i>
+					<i className="material-icons arrow-down">keyboard_arrow_down</i>
 				</header>,
 				<div />
 			</Fragment>

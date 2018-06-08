@@ -16,9 +16,9 @@ class Body extends React.Component {
 	}
 }
 
-const mapStateToProps = state => {}
+const mapStateToProps = state => ({})
 
-const mapDispatchToProps = (dispatch, getState) => {}
+const mapDispatchToProps = (dispatch, getState) => ({})
 
 export default connect(
 	mapStateToProps,
