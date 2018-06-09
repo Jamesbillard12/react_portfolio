@@ -90,7 +90,7 @@ class MenuAppBar extends React.Component {
 								src="../../../assets/logo.png"
 							/>
 
-							<NavBar />
+							<NavBar handleNav={this.props.handleNav} />
 							<div className="icon-button">
 								<IconButton
 									aria-owns={open ? 'menu-appbar' : null}

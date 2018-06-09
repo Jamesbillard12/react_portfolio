@@ -14,12 +14,14 @@ class Landing extends React.Component {
 		}
 	}
 	componentDidMount() {
-		this.props.scrollTop({ scrollTop: 1 })
+		this.props.scrollTopCreate({ scrollTop: 1 })
 		this.refs.landing.onscroll = () => {
 			if (this.refs.landing.scrollTop === 0) {
 				this.refs.landing.scrollTop = 0.5
 			}
-			this.props.scrollTop({ scrollTop: this.refs.landing.scrollTop * 2 })
+			let obj = { ...this.props.scrolltop }
+			obj.scrollTop = this.refs.landing.scrollTop * 2
+			this.props.scrollTopCreate(obj)
 		}
 	}
 
@@ -42,6 +44,18 @@ class Landing extends React.Component {
 			})
 		}
 	}
+
+	handleNav = (to, duration) => {
+		if (duration === 0) return
+		var difference = to - this.refs.landing.scrollTop
+		var perTick = (difference / duration) * 10
+
+		setTimeout(() => {
+			this.refs.landing.scrollTop = this.refs.landing.scrollTop + perTick
+			this.handleNav(to, duration - 10)
+		}, 10)
+	}
+
 	render() {
 		const opacity =
 			Math.min(100 / this.props.scrolltop.scrollTop, 1) === 1.0
@@ -55,7 +69,11 @@ class Landing extends React.Component {
 				className="landing"
 				style={{ backgroundImage: `url(${this.state.imgUrl})` }}
 			>
-				<AppBarCustom opaque={opaque} title="James Billard" />
+				<AppBarCustom
+					handleNav={this.handleNav}
+					opaque={opaque}
+					title="James Billard"
+				/>
 				<Body opacity={opacity} />
 			</main>
 		)
@@ -67,7 +85,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-	scrollTop: scroll => dispatch(scrollTopCreate(scroll))
+	scrollTopCreate: scroll => dispatch(scrollTopCreate(scroll))
 })
 
 export default connect(

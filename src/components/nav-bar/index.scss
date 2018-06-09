@@ -9,11 +9,28 @@
 	z-index: 11;
 	left: 50%;
 	transform: translateX(-50%);
-	li {
+	&__li {
 		display: inline-block;
 		margin-left: 10px;
 		margin-right: 10px;
-		margin-top: 10px;
 		padding: 10px;
+		cursor: pointer;
+		&__nav-link {
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-content: center;
+			align-items: center;
+			p {
+				margin: 0;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.nav-bar {
+		display: none;
 	}
 }
