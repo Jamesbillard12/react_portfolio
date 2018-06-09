@@ -1,6 +1,7 @@
 import './index.scss'
 import React from 'react'
 import { connect } from 'react-redux'
+import { scrollTopCreate } from '../../../action/scrollTop-actions'
 
 class FrontEndSkills extends React.Component {
 	constructor(props) {
@@ -9,9 +10,22 @@ class FrontEndSkills extends React.Component {
 		this.state = {}
 	}
 
+	componentDidMount() {
+		setTimeout(() => {
+			this.setOffsetTop()
+		}, 500)
+		window.addEventListener('resize', this.setOffsetTop)
+	}
+
+	setOffsetTop = () => {
+		let obj = { ...this.props.scrolltop }
+		obj.skillsOffsetTop = this.refs.frontEndSkills.offsetTop - 64
+		this.props.scrollTopCreate(obj)
+	}
+
 	render() {
 		return (
-			<div className="front-end-skills">
+			<div ref="frontEndSkills" className="front-end-skills">
 				<div className="front-end-skills__table-container">
 					<div className="front-end-skills__table-container__title">
 						<i className="material-icons front-end-skills__table-container__title__icon">
@@ -73,9 +87,13 @@ class FrontEndSkills extends React.Component {
 	}
 }
 
-const mapStateToProps = state => ({})
+const mapStateToProps = state => ({
+	scrolltop: state.scrolltop
+})
 
-const mapDispatchToProps = (dispatch, getState) => ({})
+const mapDispatchToProps = dispatch => ({
+	scrollTopCreate: scroll => dispatch(scrollTopCreate(scroll))
+})
 
 export default connect(
 	mapStateToProps,

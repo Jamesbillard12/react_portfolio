@@ -41,7 +41,12 @@ class NavBar extends React.Component {
 						<p>About Me</p>
 					</div>
 				</li>
-				<li className="nav-bar__li">
+				<li
+					onClick={() =>
+						this.props.handleNav(this.props.scrolltop.skillsOffsetTop, 500)
+					}
+					className="nav-bar__li"
+				>
 					<div className="nav-bar__li__nav-link">
 						<i
 							style={{ color: 'rgba(208, 0, 0, 1)' }}
