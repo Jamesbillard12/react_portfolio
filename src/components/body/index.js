@@ -5,6 +5,7 @@ import Header from '../header'
 import AboutMe from '../about-me'
 import FrontEndSkills from '../front-end-skills'
 import RecentWork from '../recent-work'
+import Contact from '../contact'
 const Fragment = React.Fragment
 
 class Body extends React.Component {
@@ -15,6 +16,7 @@ class Body extends React.Component {
 				<AboutMe />
 				<FrontEndSkills />
 				<RecentWork />
+				<Contact />
 			</Fragment>
 		)
 	}
