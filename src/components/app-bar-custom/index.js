@@ -122,8 +122,11 @@ class MenuAppBar extends React.Component {
 									open={open}
 									onClose={this.handleClose}
 								>
-									<MenuItem onClick={this.handleClose}>Profile</MenuItem>
-									<MenuItem onClick={this.handleClose}>My account</MenuItem>
+									<MenuItem onClick={this.handleClose}>Home</MenuItem>
+									<MenuItem onClick={this.handleClose}>About Me</MenuItem>
+									<MenuItem onClick={this.handleClose}>Skills</MenuItem>
+									<MenuItem onClick={this.handleClose}>Recent Work</MenuItem>
+									<MenuItem onClick={this.handleClose}>Contact Me</MenuItem>
 								</Menu>
 							</div>
 						</Fragment>
