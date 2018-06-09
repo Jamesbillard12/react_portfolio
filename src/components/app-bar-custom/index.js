@@ -1,5 +1,6 @@
 import './index.scss'
 import React from 'react'
+import { connect } from 'react-redux'
 import { renderIf } from '../../../lib/util'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
@@ -90,7 +91,7 @@ class MenuAppBar extends React.Component {
 								src="../../../assets/logo.png"
 							/>
 
-							<NavBar />
+							<NavBar handleNav={this.props.handleNav} />
 							<div className="icon-button">
 								<IconButton
 									aria-owns={open ? 'menu-appbar' : null}
@@ -122,11 +123,54 @@ class MenuAppBar extends React.Component {
 									open={open}
 									onClose={this.handleClose}
 								>
-									<MenuItem onClick={this.handleClose}>Home</MenuItem>
-									<MenuItem onClick={this.handleClose}>About Me</MenuItem>
-									<MenuItem onClick={this.handleClose}>Skills</MenuItem>
-									<MenuItem onClick={this.handleClose}>Recent Work</MenuItem>
-									<MenuItem onClick={this.handleClose}>Contact Me</MenuItem>
+									<MenuItem
+										onClick={() => {
+											this.handleClose()
+											this.props.handleNav(0.5, 500)
+										}}
+									>
+										Home
+									</MenuItem>
+									<MenuItem
+										onClick={() => {
+											this.handleClose()
+											this.props.handleNav(
+												this.props.scrolltop.aboutOffsetTop,
+												500
+											)
+										}}
+									>
+										About Me
+									</MenuItem>
+									<MenuItem
+										onClick={() => {
+											this.handleClose()
+											this.props.handleNav(
+												this.props.scrolltop.skillsOffsetTop,
+												500
+											)
+										}}
+									>
+										Skills
+									</MenuItem>
+									<MenuItem
+										onClick={() => {
+											this.handleClose()
+											this.props.handleNav(
+												this.props.scrolltop.workOffsetTop,
+												500
+											)
+										}}
+									>
+										Recent Work
+									</MenuItem>
+									<MenuItem
+										onClick={() => {
+											this.handleClose()
+										}}
+									>
+										Contact Me
+									</MenuItem>
 								</Menu>
 							</div>
 						</Fragment>
@@ -141,4 +185,15 @@ MenuAppBar.propTypes = {
 	classes: PropTypes.object.isRequired
 }
 
-export default withStyles(styles)(MenuAppBar)
+const mapStateToProps = state => ({
+	scrolltop: state.scrolltop
+})
+
+const mapDispatchToProps = dispatch => ({
+	scrollTopCreate: scroll => dispatch(scrollTopCreate(scroll))
+})
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(withStyles(styles)(MenuAppBar))

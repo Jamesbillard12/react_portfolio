@@ -2,6 +2,7 @@ import './index.scss'
 import React from 'react'
 import { connect } from 'react-redux'
 import { withStyles } from '@material-ui/core/styles'
+import { scrollTopCreate } from '../../../action/scrollTop-actions'
 import AppBarCustom from '../app-bar-custom'
 import Body from '../body'
 
@@ -11,11 +12,27 @@ class AboutMe extends React.Component {
 
 		this.state = {}
 	}
+	componentDidMount() {
+		setTimeout(() => {
+			this.setOffsetTop()
+		}, 500)
+		window.addEventListener('resize', this.setOffsetTop)
+	}
+
+	setOffsetTop = () => {
+		let obj = { ...this.props.scrolltop }
+		obj.aboutOffsetTop =
+			this.refs.aboutMe.offsetTop + this.refs.aboutMeContent.clientHeight - 64
+		this.props.scrollTopCreate(obj)
+	}
 
 	render() {
 		return (
-			<div className="about-me">
-				<img src="../../../assets/seattle-skyline-black-silhouette.svg" />
+			<div ref="aboutMe" className="about-me">
+				<img
+					ref="aboutMeContent"
+					src="../../../assets/seattle-skyline-black-silhouette.svg"
+				/>
 				<div className="about-me__content">
 					<div className="about-me__content__header">
 						<i className="material-icons about-me__content__header__icon">
@@ -48,9 +65,13 @@ class AboutMe extends React.Component {
 	}
 }
 
-const mapStateToProps = state => ({})
+const mapStateToProps = state => ({
+	scrolltop: state.scrolltop
+})
 
-const mapDispatchToProps = (dispatch, getState) => ({})
+const mapDispatchToProps = dispatch => ({
+	scrollTopCreate: scroll => dispatch(scrollTopCreate(scroll))
+})
 
 export default connect(
 	mapStateToProps,
