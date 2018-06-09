@@ -20,7 +20,16 @@ class NavBar extends React.Component {
 					onClick={() => this.props.handleNav(0.5, 500)}
 					className="nav-bar__li"
 				>
-					<div className="nav-bar__li__nav-link">
+					<div
+						style={{
+							color:
+								this.props.scrolltop.scrollTop <
+								this.props.scrolltop.aboutOffsetTop * 2
+									? '#2274A5'
+									: 'white'
+						}}
+						className="nav-bar__li__nav-link"
+					>
 						<i className="material-icons">home</i>
 						<p>Home</p>
 					</div>
@@ -31,13 +40,19 @@ class NavBar extends React.Component {
 					}
 					className="nav-bar__li"
 				>
-					<div className="nav-bar__li__nav-link">
-						<i
-							style={{ color: 'rgba(11, 93, 30, 1)' }}
-							className="material-icons"
-						>
-							account_box
-						</i>
+					<div
+						style={{
+							color:
+								this.props.scrolltop.scrollTop >=
+									this.props.scrolltop.aboutOffsetTop * 2 &&
+								this.props.scrolltop.scrollTop <
+									this.props.scrolltop.skillsOffsetTop * 2
+									? 'rgba(11, 93, 30, 1)'
+									: 'white'
+						}}
+						className="nav-bar__li__nav-link"
+					>
+						<i className="material-icons">account_box</i>
 						<p>About Me</p>
 					</div>
 				</li>
@@ -47,13 +62,19 @@ class NavBar extends React.Component {
 					}
 					className="nav-bar__li"
 				>
-					<div className="nav-bar__li__nav-link">
-						<i
-							style={{ color: 'rgba(208, 0, 0, 1)' }}
-							className="material-icons"
-						>
-							code
-						</i>
+					<div
+						style={{
+							color:
+								this.props.scrolltop.scrollTop >=
+									this.props.scrolltop.skillsOffsetTop * 2 &&
+								this.props.scrolltop.scrollTop <
+									this.props.scrolltop.workOffsetTop * 2
+									? 'rgba(208, 0, 0, 1)'
+									: 'white'
+						}}
+						className="nav-bar__li__nav-link"
+					>
+						<i className="material-icons">code</i>
 						<p>Skills</p>
 					</div>
 				</li>
@@ -63,18 +84,42 @@ class NavBar extends React.Component {
 					}
 					className="nav-bar__li"
 				>
-					<div className="nav-bar__li__nav-link">
-						<i
-							style={{ color: 'rgba(250, 169, 22, 1)' }}
-							className="material-icons"
-						>
-							work
-						</i>
+					<div
+						style={{
+							color:
+								this.props.scrolltop.scrollTop >=
+									this.props.scrolltop.workOffsetTop * 2 &&
+								this.props.scrolltop.scrollTop -
+									this.props.scrolltop.workOffsetTop * 2 <
+									100
+									? 'rgba(250, 169, 22, 1)'
+									: 'white'
+						}}
+						className="nav-bar__li__nav-link"
+					>
+						<i className="material-icons">work</i>
 						<p>Recent Work</p>
 					</div>
 				</li>
-				<li className="nav-bar__li">
-					<div className="nav-bar__li__nav-link">
+				<li
+					onClick={() =>
+						this.props.handleNav(this.props.scrolltop.contactOffsetTop, 500)
+					}
+					className="nav-bar__li"
+				>
+					<div
+						style={{
+							color:
+								this.props.scrolltop.scrollTop >=
+									this.props.scrolltop.workOffsetTop * 2 &&
+								this.props.scrolltop.scrollTop -
+									this.props.scrolltop.workOffsetTop * 2 >
+									100
+									? 'pink'
+									: 'white'
+						}}
+						className="nav-bar__li__nav-link"
+					>
 						<i className="material-icons">contact_mail</i>
 						<p>Contact Me</p>
 					</div>
