@@ -19,7 +19,7 @@ class FrontEndSkills extends React.Component {
 
 	setOffsetTop = () => {
 		let obj = { ...this.props.scrolltop }
-		obj.skillsOffsetTop = this.refs.frontEndSkills.offsetTop - 64
+		obj.skillsOffsetTop = this.refs.frontEndSkills.offsetTop + 75 - 64
 		this.props.scrollTopCreate(obj)
 	}
 
