@@ -14,13 +14,11 @@ class NavBar extends React.Component {
 	render() {
 		return (
 			<ul className="nav-bar">
-				<li>hello</li>
-				<li>hello</li>
-				<li>hello</li>
-				<li>hello</li>
-				<li>hello</li>
-				<li>hello</li>
-				<li>hello</li>
+				<li>Home</li>
+				<li>About Me</li>
+				<li>Skills</li>
+				<li>Recent Work</li>
+				<li>Contact Me</li>
 			</ul>
 		)
 	}
