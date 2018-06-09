@@ -28,9 +28,17 @@ class Landing extends React.Component {
 			this.setState({
 				imgUrl: '../../../assets/black-and-white-dark-pattern-211816.jpg'
 			})
-		} else if (this.props.scrolltop.scrollTop > 2000) {
+		} else if (
+			this.props.scrolltop.scrollTop > 2000 &&
+			this.props.scrolltop.scrollTop < 5000
+		) {
 			this.setState({
 				imgUrl: '../../../assets/black-and-white-browsing-business-265152.jpg'
+			})
+		} else if (this.props.scrolltop.scrollTop > 5000) {
+			this.setState({
+				imgUrl:
+					'../../../assets/black-and-white-composition-conceptual-934071.jpg'
 			})
 		}
 	}

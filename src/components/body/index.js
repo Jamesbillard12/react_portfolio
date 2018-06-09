@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import Header from '../header'
 import AboutMe from '../about-me'
 import FrontEndSkills from '../front-end-skills'
+import RecentWork from '../recent-work'
 const Fragment = React.Fragment
 
 class Body extends React.Component {
@@ -13,6 +14,7 @@ class Body extends React.Component {
 				<Header opacity={this.props.opacity} />
 				<AboutMe />
 				<FrontEndSkills />
+				<RecentWork />
 			</Fragment>
 		)
 	}
