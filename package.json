@@ -28,8 +28,9 @@
 		"test": "jest",
 		"lint": "eslint .",
 		"build": "rm -rf build && webpack",
-		"start": "node index.js",
-		"watch": "webpack-dev-server --host 0.0.0.0 --inline --hot"
+		"start": "node server.js",
+		"watch": "webpack-dev-server --host 0.0.0.0 --inline --hot",
+		"deploy": "aws s3 cp build s3://james-billard.com --recursive"
 	},
 	"bugs": {
 		"url": "https://github.com/Jamesbillard12/react_portfolio/issues"
@@ -38,6 +39,8 @@
 	"dependencies": {
 		"@material-ui/core": "^1.2.0",
 		"@material-ui/icons": "^1.1.0",
+		"aws-amplify": "^0.4.4",
+		"aws-amplify-react": "^0.1.50",
 		"babel-loader": "^7.1.4",
 		"babel-preset-env": "^1.7.0",
 		"clean-webpack-plugin": "^0.1.19",
