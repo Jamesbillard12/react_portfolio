@@ -9,7 +9,7 @@ phases:
      - echo "pre_build step"
  build:
    commands:
-     - aws s3 sync --delete . "s3://james-billard.com"
+     - aws s3 sync --delete . s3://james-billard.com
  post_build:
    commands:
      - echo "post_build step"
