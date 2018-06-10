@@ -25,7 +25,7 @@ class NavBar extends React.Component {
 							color:
 								this.props.scrolltop.scrollTop <
 								this.props.scrolltop.aboutOffsetTop * 2
-									? '#2274A5'
+									? 'mediumvioletred'
 									: 'white'
 						}}
 						className="nav-bar__li__nav-link"
@@ -115,7 +115,7 @@ class NavBar extends React.Component {
 								this.props.scrolltop.scrollTop -
 									this.props.scrolltop.workOffsetTop * 2 >
 									100
-									? 'pink'
+									? 'purple'
 									: 'white'
 						}}
 						className="nav-bar__li__nav-link"

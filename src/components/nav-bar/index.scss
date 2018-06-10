@@ -15,6 +15,9 @@
 		margin-right: 10px;
 		padding: 10px;
 		cursor: pointer;
+		div {
+			transition: 500ms;
+		}
 		&__nav-link {
 			display: flex;
 			flex-direction: column;
