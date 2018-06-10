@@ -19,8 +19,8 @@ class ContactIcon extends React.Component {
 					this.props.type == 'link',
 					<a target="_blank" href={this.props.url}>
 						<FontAwesome
+							className="social-icon"
 							size="2x"
-							style={{ color: 'white' }}
 							name={this.props.name}
 						/>
 					</a>
@@ -29,8 +29,8 @@ class ContactIcon extends React.Component {
 					this.props.type == 'email',
 					<div onClick={() => window.open(`mailto:${this.props.url}`)}>
 						<FontAwesome
+							className="social-icon"
 							size="2x"
-							style={{ color: 'white' }}
 							name={this.props.name}
 						/>
 					</div>
