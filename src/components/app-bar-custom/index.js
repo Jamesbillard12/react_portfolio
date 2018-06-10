@@ -167,6 +167,10 @@ class MenuAppBar extends React.Component {
 									<MenuItem
 										onClick={() => {
 											this.handleClose()
+											this.props.handleNav(
+												this.props.scrolltop.contactOffsetTop,
+												500
+											)
 										}}
 									>
 										Contact Me
