@@ -12,7 +12,6 @@ class ContactIcon extends React.Component {
 	}
 
 	render() {
-		console.log(this.props.type == 'link')
 		return (
 			<Fragment>
 				{renderIf(
