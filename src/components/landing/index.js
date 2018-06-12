@@ -10,7 +10,7 @@ class Landing extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			imgUrl: '../../../assets/black-and-white-dark-pattern-211816.jpg'
+			imgUrl: '../../../assets/black-and-white-dark-pattern-211816.jpeg'
 		}
 	}
 	componentDidMount() {
@@ -31,14 +31,14 @@ class Landing extends React.Component {
 			this.props.scrolltop.aboutOffsetTop * 2
 		) {
 			this.setState({
-				imgUrl: '../../../assets/black-and-white-dark-pattern-211816.jpg'
+				imgUrl: '../../../assets/black-and-white-dark-pattern-211816.jpeg'
 			})
 		} else if (
 			this.props.scrolltop.scrollTop >=
 			this.props.scrolltop.aboutOffsetTop * 2
 		) {
 			this.setState({
-				imgUrl: '../../../assets/black-and-white-browsing-business-265152.jpg'
+				imgUrl: '../../../assets/black-and-white-browsing-business-265152.jpeg'
 			})
 		}
 	}
