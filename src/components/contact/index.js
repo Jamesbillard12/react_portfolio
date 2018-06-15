@@ -22,7 +22,7 @@ class Contact extends React.Component {
 					type: 'link'
 				},
 				{
-					name: 'envelope',
+					name: 'envelope-square',
 					url: 'jamesbillard12@hotmail.com',
 					type: 'email'
 				},
