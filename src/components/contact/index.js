@@ -44,7 +44,11 @@ class Contact extends React.Component {
 
 	render() {
 		return (
-			<div style={{height: this.props.windowSize.height}} ref="contact" className="contact">
+			<div
+				style={{ minHeight: this.props.windowSize.height }}
+				ref="contact"
+				className="contact"
+			>
 				<div className="contact__header">
 					<i className="material-icons contact__header__icon">contact_mail</i>
 					<h1 className="contact__header__title">

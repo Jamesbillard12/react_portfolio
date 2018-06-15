@@ -34,7 +34,7 @@ class RecentWork extends React.Component {
 					</h1>
 				</div>
 				<div
-					style={{ height: this.props.windowSize.height }}
+					style={{ minHeight: this.props.windowSize.height }}
 					className="recent-work__table-container"
 				>
 					<div

@@ -27,7 +27,7 @@ class FrontEndSkills extends React.Component {
 		return (
 			<div ref="frontEndSkills" className="front-end-skills">
 				<div
-					style={{ height: this.props.windowSize.height }}
+					style={{ minHeight: this.props.windowSize.height }}
 					className="front-end-skills__table-container"
 				>
 					<div className="front-end-skills__table-container__title">
