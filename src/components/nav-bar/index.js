@@ -89,9 +89,8 @@ class NavBar extends React.Component {
 							color:
 								this.props.scrolltop.scrollTop >=
 									this.props.scrolltop.workOffsetTop * 2 &&
-								this.props.scrolltop.scrollTop -
-									this.props.scrolltop.workOffsetTop * 2 <
-									100
+								this.props.scrolltop.scrollTop <
+									this.props.scrolltop.contactOffsetTop * 2
 									? 'rgba(250, 169, 22, 1)'
 									: 'white'
 						}}
@@ -111,10 +110,8 @@ class NavBar extends React.Component {
 						style={{
 							color:
 								this.props.scrolltop.scrollTop >=
-									this.props.scrolltop.workOffsetTop * 2 &&
-								this.props.scrolltop.scrollTop -
-									this.props.scrolltop.workOffsetTop * 2 >
-									100
+									this.props.scrolltop.contactOffsetTop * 2
+								
 									? 'purple'
 									: 'white'
 						}}
