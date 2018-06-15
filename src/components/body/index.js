@@ -12,7 +12,10 @@ class Body extends React.Component {
 	render() {
 		return (
 			<Fragment>
-				<Header opacity={this.props.opacity} />
+				<Header
+					opacity={this.props.opacity}
+					setWindowSize={this.props.setWindowSize}
+				/>
 				<AboutMe />
 				<FrontEndSkills />
 				<RecentWork />

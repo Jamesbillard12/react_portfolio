@@ -27,14 +27,13 @@
 	}
 	&__table-container {
 		width: 100%;
-		height: 100%;
 		padding-bottom: 100px;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: space-around;
 		align-content: center;
-		align-items: center;
+		align-items: flex-start;
 		&__table {
 			&__work {
 				display: flex;

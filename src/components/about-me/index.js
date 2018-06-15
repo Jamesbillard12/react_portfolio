@@ -3,6 +3,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { withStyles } from '@material-ui/core/styles'
 import { scrollTopCreate } from '../../../action/scrollTop-actions'
+
 import AppBarCustom from '../app-bar-custom'
 import Body from '../body'
 
@@ -33,7 +34,10 @@ class AboutMe extends React.Component {
 					ref="aboutMeContent"
 					src="../../../assets/seattle-skyline-black-silhouette.svg"
 				/>
-				<div className="about-me__content">
+				<div
+					style={{ height: this.props.windowSize.height }}
+					className="about-me__content"
+				>
 					<div className="about-me__content__header">
 						<i className="material-icons about-me__content__header__icon">
 							account_box
@@ -45,9 +49,9 @@ class AboutMe extends React.Component {
 					<div className="about-me__content__body">
 						<p className="about-me__content__body__paragraph">
 							I am a passionate and tenacious Web developer. Fast learner,
-							offering the ability to assess an organization’s needs and create
-							a complementary, robust web presence. Experienced in all five
-							stages of the web development process including information
+							offering the ability to assess an organization&#39;s needs and
+							create a complementary, robust web presence. Experienced in all
+							five stages of the web development process including information
 							gathering, planning, design, development, testing and deployment,
 							and maintenance. Specialties include JavaScript, React, Angular,
 							CSS, HTML, and Node.js.
@@ -66,7 +70,8 @@ class AboutMe extends React.Component {
 }
 
 const mapStateToProps = state => ({
-	scrolltop: state.scrolltop
+	scrolltop: state.scrolltop,
+	windowSize: state.windowSize
 })
 
 const mapDispatchToProps = dispatch => ({
