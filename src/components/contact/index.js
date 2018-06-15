@@ -62,9 +62,9 @@ class Contact extends React.Component {
 					</h1>
 				</div>
 				<div className="contact__social">
-					{this.state.contactMeArr.map(contact => {
+					{this.state.contactMeArr.map((contact, i) => {
 						return (
-							<div className="contact__social__icon-wrapper">
+							<div key={i} className="contact__social__icon-wrapper">
 								<ContactIcon
 									name={contact.name}
 									url={contact.url}
