@@ -35,7 +35,7 @@ class AboutMe extends React.Component {
 					src="../../../assets/seattle-skyline-black-silhouette.svg"
 				/>
 				<div
-					style={{ height: this.props.windowSize.height }}
+					style={{ minHeight: this.props.windowSize.height }}
 					className="about-me__content"
 				>
 					<div className="about-me__content__header">
