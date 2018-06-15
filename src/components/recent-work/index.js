@@ -29,9 +29,14 @@ class RecentWork extends React.Component {
 			<div ref="recentWork" className="recent-work">
 				<div className="recent-work__title">
 					<i className="material-icons recent-work__title__icon">work</i>
-					<h1 className="recent-work__title__text">My Recent Work</h1>
+					<h1 className="recent-work__title__text">
+						Projects I Have Worked On
+					</h1>
 				</div>
-				<div className="recent-work__table-container">
+				<div
+					style={{ height: this.props.windowSize.height }}
+					className="recent-work__table-container"
+				>
 					<div
 						className="recent-work__table-container__table__work"
 						style={{
@@ -83,7 +88,8 @@ class RecentWork extends React.Component {
 }
 
 const mapStateToProps = state => ({
-	scrolltop: state.scrolltop
+	scrolltop: state.scrolltop,
+	windowSize: state.windowSize
 })
 
 const mapDispatchToProps = dispatch => ({

@@ -26,7 +26,10 @@ class FrontEndSkills extends React.Component {
 	render() {
 		return (
 			<div ref="frontEndSkills" className="front-end-skills">
-				<div className="front-end-skills__table-container">
+				<div
+					style={{ height: this.props.windowSize.height }}
+					className="front-end-skills__table-container"
+				>
 					<div className="front-end-skills__table-container__title">
 						<i className="material-icons front-end-skills__table-container__title__icon">
 							code
@@ -88,7 +91,8 @@ class FrontEndSkills extends React.Component {
 }
 
 const mapStateToProps = state => ({
-	scrolltop: state.scrolltop
+	scrolltop: state.scrolltop,
+	windowSize: state.windowSize
 })
 
 const mapDispatchToProps = dispatch => ({

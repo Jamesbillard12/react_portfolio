@@ -3,10 +3,9 @@
 .about-me {
 	position: relative;
 	&__content {
-		padding-top: 100px;
-		padding-bottom: 100px;
 		margin-top: -40px;
 		width: 100%;
+		height: 100%;
 		background-color: $color-primary;
 		display: flex;
 		flex-direction: column;
