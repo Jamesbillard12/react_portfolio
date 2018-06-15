@@ -44,7 +44,7 @@ class Contact extends React.Component {
 
 	render() {
 		return (
-			<div ref="contact" className="contact">
+			<div style={{height: this.props.windowSize.height}} ref="contact" className="contact">
 				<div className="contact__header">
 					<i className="material-icons contact__header__icon">contact_mail</i>
 					<h1 className="contact__header__title">
@@ -71,7 +71,8 @@ class Contact extends React.Component {
 }
 
 const mapStateToProps = state => ({
-	scrolltop: state.scrolltop
+	scrolltop: state.scrolltop,
+	windowSize: state.windowSize
 })
 
 const mapDispatchToProps = dispatch => ({

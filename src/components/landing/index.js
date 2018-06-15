@@ -4,7 +4,9 @@ import { connect } from 'react-redux'
 import { withStyles } from '@material-ui/core/styles'
 import AppBarCustom from '../app-bar-custom'
 import { scrollTopCreate } from '../../../action/scrollTop-actions'
+import { windowSizeCreate } from '../../../action/windowSize-actions'
 import Body from '../body'
+import debounce from 'debounce'
 
 class Landing extends React.Component {
 	constructor(props) {
@@ -12,6 +14,7 @@ class Landing extends React.Component {
 		this.state = {
 			imgUrl: '../../../assets/black-and-white-dark-pattern-211816.jpeg'
 		}
+		this.setWindowSize = debounce(this.setWindowSize, 500)
 	}
 	componentDidMount() {
 		this.props.scrollTopCreate({ scrollTop: 1 })
@@ -23,6 +26,12 @@ class Landing extends React.Component {
 			obj.scrollTop = this.refs.landing.scrollTop * 2
 			this.props.scrollTopCreate(obj)
 		}
+		window.addEventListener('resize', this.setWindowSize)
+	}
+
+	setWindowSize = () => {
+		let windowSize = { height: window.innerHeight, width: window.innerWidth }
+		this.props.windowSizeCreate(windowSize)
 	}
 
 	backgroundImageChange = () => {
@@ -72,18 +81,20 @@ class Landing extends React.Component {
 					opaque={opaque}
 					title="James Billard"
 				/>
-				<Body opacity={opacity} />
+				<Body opacity={opacity} setWindowSize={this.setWindowSize} />
 			</main>
 		)
 	}
 }
 
 const mapStateToProps = state => ({
-	scrolltop: state.scrolltop
+	scrolltop: state.scrolltop,
+	windowSize: state.windowSize
 })
 
 const mapDispatchToProps = dispatch => ({
-	scrollTopCreate: scroll => dispatch(scrollTopCreate(scroll))
+	scrollTopCreate: scroll => dispatch(scrollTopCreate(scroll)),
+	windowSizeCreate: windowSize => dispatch(windowSizeCreate(windowSize))
 })
 
 export default connect(

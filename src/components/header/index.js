@@ -9,6 +9,9 @@ class Header extends React.Component {
 	constructor(props) {
 		super(props)
 	}
+	componentDidMount() {
+		this.props.setWindowSize()
+	}
 	render() {
 		return (
 			<Fragment>
