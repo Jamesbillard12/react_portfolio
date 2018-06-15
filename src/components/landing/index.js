@@ -18,17 +18,17 @@ class Landing extends React.Component {
 	}
 	componentDidMount() {
 		this.props.scrollTopCreate({ scrollTop: 1 })
-		this.refs.landing.onscroll = () => {
-			if (this.refs.landing.scrollTop === 0) {
-				this.refs.landing.scrollTop = 0.5
-			}
-			let obj = { ...this.props.scrolltop }
-			obj.scrollTop = this.refs.landing.scrollTop * 2
-			this.props.scrollTopCreate(obj)
-		}
+		this.setScroll()
 		window.addEventListener('resize', this.setWindowSize)
 	}
-
+	setScroll = () => {
+		if (this.refs.landing.scrollTop === 0) {
+			this.refs.landing.scrollTop = 0.5
+		}
+		let obj = { ...this.props.scrolltop }
+		obj.scrollTop = this.refs.landing.scrollTop * 2
+		this.props.scrollTopCreate(obj)
+	}
 	setWindowSize = () => {
 		let windowSize = { height: window.innerHeight, width: window.innerWidth }
 		this.props.windowSizeCreate(windowSize)
@@ -71,7 +71,10 @@ class Landing extends React.Component {
 		const opaque = Math.min(this.props.scrolltop.scrollTop / 400, 1)
 		return (
 			<main
-				onScroll={this.backgroundImageChange}
+				onScroll={() => {
+					this.backgroundImageChange()
+					this.setScroll()
+				}}
 				ref="landing"
 				className="landing"
 				style={{ backgroundImage: `url(${this.state.imgUrl})` }}

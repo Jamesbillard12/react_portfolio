@@ -1,5 +1,7 @@
 .landing {
-	overflow: scroll;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	overflow-x: hidden;
 	background-image: url('../../../assets/black-and-white-dark-pattern-211816.jpeg');
 	background-position: center center;
 	background-size: cover;

@@ -22,9 +22,14 @@ class Contact extends React.Component {
 					type: 'link'
 				},
 				{
-					name: 'envelope',
+					name: 'envelope-square',
 					url: 'jamesbillard12@hotmail.com',
 					type: 'email'
+				},
+				{
+					name: 'github-square',
+					url: 'https://github.com/Jamesbillard12',
+					type: 'link'
 				}
 			]
 		}
@@ -44,7 +49,11 @@ class Contact extends React.Component {
 
 	render() {
 		return (
-			<div style={{height: this.props.windowSize.height}} ref="contact" className="contact">
+			<div
+				style={{ minHeight: this.props.windowSize.height }}
+				ref="contact"
+				className="contact"
+			>
 				<div className="contact__header">
 					<i className="material-icons contact__header__icon">contact_mail</i>
 					<h1 className="contact__header__title">
@@ -53,9 +62,9 @@ class Contact extends React.Component {
 					</h1>
 				</div>
 				<div className="contact__social">
-					{this.state.contactMeArr.map(contact => {
+					{this.state.contactMeArr.map((contact, i) => {
 						return (
-							<div className="contact__social__icon-wrapper">
+							<div key={i} className="contact__social__icon-wrapper">
 								<ContactIcon
 									name={contact.name}
 									url={contact.url}
