@@ -55,12 +55,18 @@
 				background-repeat: no-repeat;
 				background-position: center center;
 				transition: 500ms;
-				background-size: contain;
+				button {
+					visibility: hidden;
+				}
+
 				&:hover {
 					background-image: url('../../../assets/2000px-Solid_black.svg.png') !important;
 					color: $white;
 					cursor: pointer;
-					background-size: cover;
+					background-size: cover !important;
+					button {
+						visibility: visible;
+					}
 				}
 			}
 		}

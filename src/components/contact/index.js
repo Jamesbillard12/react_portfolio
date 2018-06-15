@@ -25,6 +25,11 @@ class Contact extends React.Component {
 					name: 'envelope',
 					url: 'jamesbillard12@hotmail.com',
 					type: 'email'
+				},
+				{
+					name: 'github-square',
+					url: 'https://github.com/Jamesbillard12',
+					type: 'link'
 				}
 			]
 		}

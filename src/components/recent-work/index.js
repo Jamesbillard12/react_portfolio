@@ -40,37 +40,46 @@ class RecentWork extends React.Component {
 					<div
 						className="recent-work__table-container__table__work"
 						style={{
+							backgroundSize: 'cover',
 							backgroundImage: `url('../../../assets/Web-Splash-Screen-with-Logo.png')`
-						}}
-						onClick={() => {
-							window.open('https://app.basemap.com/', '_blank')
 						}}
 					>
 						<p>
 							BaseMap is a complete outdoor planning and navigational tool all
 							in one. No need for multiple apps on your phone.
 						</p>
-						<p>Click to Visit the Web App</p>
+						<button
+							onClick={() => {
+								window.open('https://app.basemap.com/', '_blank')
+							}}
+						>
+							Click to Visit the Web App
+						</button>
 					</div>
 					<div
 						className="recent-work__table-container__table__work"
 						style={{
+							backgroundSize: 'contain',
 							backgroundImage: `url('../../../assets/PAVEXpress-LCCA-logo.png')`
 						}}
-						onClick={() =>
-							window.open('http://www.pavexpressdesign.com/', '_blank')
-						}
 					>
 						<p className="recent-work__table-container__table__title">
 							The PAVEXpress Scoping Tool is a simplified pavement design tool
 							to help engineers and pavement decision-makers analyze pavement
 							structures and create technically sound structural designs.
 						</p>
-						<p>Click to Visit the Website</p>
+						<button
+							onClick={() =>
+								window.open('http://www.pavexpressdesign.com/', '_blank')
+							}
+						>
+							Click to Visit the Website
+						</button>
 					</div>
 					<div
 						className="recent-work__table-container__table__work"
 						style={{
+							backgroundSize: 'cover',
 							backgroundImage: `url('../../../assets/noimage_thumbnail.png')`
 						}}
 					>
@@ -79,7 +88,7 @@ class RecentWork extends React.Component {
 							Windows) used to track construction samples from worksites to
 							laboratories.
 						</p>
-						<p>* Currently not Released *</p>
+						<button disabled>* Currently not Released *</button>
 					</div>
 				</div>
 			</div>
