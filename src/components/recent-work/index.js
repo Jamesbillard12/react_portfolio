@@ -2,6 +2,7 @@ import './index.scss'
 import React from 'react'
 import { connect } from 'react-redux'
 import { scrollTopCreate } from '../../../action/scrollTop-actions'
+import { projectsFetchRequest } from '../../../action/project-actions'
 import Button from '@material-ui/core/Button'
 
 class RecentWork extends React.Component {
@@ -16,6 +17,7 @@ class RecentWork extends React.Component {
 			this.setOffsetTop()
 		}, 500)
 		window.addEventListener('resize', this.setOffsetTop)
+		this.props.projectsSet()
 	}
 
 	setOffsetTop = () => {
@@ -98,11 +100,13 @@ class RecentWork extends React.Component {
 
 const mapStateToProps = state => ({
 	scrolltop: state.scrolltop,
-	windowSize: state.windowSize
+	windowSize: state.windowSize,
+	projects: state.projects
 })
 
 const mapDispatchToProps = dispatch => ({
-	scrollTopCreate: scroll => dispatch(scrollTopCreate(scroll))
+	scrollTopCreate: scroll => dispatch(scrollTopCreate(scroll)),
+	projectsSet: () => dispatch(projectsFetchRequest())
 })
 
 export default connect(
