@@ -18,6 +18,7 @@ let plugins = [
 	new CopyWebpackPlugin([{ from: './assets', to: '../build/assets' }]),
 	new DefinePlugin({
 		__NODE_ENV__: JSON.stringify(process.env.NODE_ENV),
+		API_URL: JSON.stringify(process.env.API_URL),
 		__DEBUG__: JSON.stringify(!production)
 	})
 ]

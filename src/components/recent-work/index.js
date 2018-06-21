@@ -17,7 +17,7 @@ class RecentWork extends React.Component {
 			this.setOffsetTop()
 		}, 500)
 		window.addEventListener('resize', this.setOffsetTop)
-		this.props.projectsSet()
+		this.props.projectsFetchRequest()
 	}
 
 	setOffsetTop = () => {
@@ -106,7 +106,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
 	scrollTopCreate: scroll => dispatch(scrollTopCreate(scroll)),
-	projectsSet: () => dispatch(projectsFetchRequest())
+	projectsFetchRequest: () => dispatch(projectsFetchRequest())
 })
 
 export default connect(
