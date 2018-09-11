@@ -2,7 +2,7 @@ import './index.scss'
 import React from 'react'
 import { connect } from 'react-redux'
 import { scrollTopCreate } from '../../../action/scrollTop-actions'
-
+//this is front end skills
 class FrontEndSkills extends React.Component {
 	constructor(props) {
 		super(props)
